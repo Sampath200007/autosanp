@@ -1,0 +1,29 @@
+---
+- name: Security Update Policies
+  hosts: students
+  become: yes
+  tasks:
+
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Update packages
+      apt:
+        upgrade: dist
+
+    - name: Install UFW
+      apt:
+        name: ufw
+        state: present
+
+    - name: Allow HTTP
+      ufw:
+        rule: allow
+        port: 80
+        proto: tcp
+
+    - name: Enable firewall
+      ufw:
+        state: enable
+

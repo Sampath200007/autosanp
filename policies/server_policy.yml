@@ -1,21 +1,19 @@
----
 
 - name: Setup Web Server
-  hosts: students
+  hosts: managed_hosts
   become: yes
+
   tasks:
 
-    - name: Update apt cache
+    - name: Ensure Apache is installed
       apt:
         update_cache: yes
-
-    - name: Install Apache2
-      apt:
         name: apache2
         state: present
 
-    - name: Start Apache service
-      service:
+    - name: Ensure Apache is Running
+      service: 
         name: apache2
         state: started
-        enabled: yes
+
+

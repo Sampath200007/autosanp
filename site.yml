@@ -1,3 +1,0 @@
----
- - import_playbook: policies/security.yml
- - import_playbook: policies/server.yml

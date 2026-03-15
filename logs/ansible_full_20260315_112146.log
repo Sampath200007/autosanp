@@ -1,0 +1,12 @@
+
+
+ERROR! conflicting action statements: apt, become_pass
+
+The error appears to be in '/home/sampath/autosanp/policies/server.yml': line 11, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Update apt cache
+      ^ here
